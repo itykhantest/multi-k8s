@@ -12,7 +12,7 @@ after_success:
   - docker build -t itykhan/multi-client ./client
   - docker build -t itykhan/multi-nginx ./nginx
   - docker build -t itykhan/multi-server ./server
-  - docker build -i itykhan/multi-worker ./worker
+  - docker build -t itykhan/multi-worker ./worker
   #login to the docker hub
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   # Take those images and push them to docker hub
