@@ -20,7 +20,7 @@
     },
     {
       "name": "nginx",
-      "image": "itykhan/,ulti-nginx",
+      "image": "itykhan/multi-nginx",
       "hostname": "nginx",
       "essential": true,
       "portMappings": [
