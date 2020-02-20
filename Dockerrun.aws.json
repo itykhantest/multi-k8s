@@ -1,0 +1,35 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "containerDefinitions": [
+    {
+      "name": "client",
+      "image": "itykhan/multi-client",
+      "hostname": "client",
+      "essential": false
+    },
+    {
+      "name": "worker",
+      "image": "itykhan/multi-worker",
+      "essential": false
+    },
+    {
+      "name": "server",
+      "image": "itykhan/multi-server",
+      "hostname": "api",
+      "essential": false
+    },
+    {
+      "name": "nginx",
+      "image": "itykhan/,ulti-nginx",
+      "hostname": "nginx",
+      "essential": true,
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 80
+        }
+      ],
+      "links": ["client", "server"]
+    }
+  ]
+}
